@@ -9,13 +9,17 @@ import {PasswordModule} from 'primeng/password';
 import {ButtonModule} from 'primeng/button';
 import { RegistrationComponent } from './registration/registration.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { LessonComponent } from './lesson/lesson.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
-  declarations: [			
+  declarations: [					
     AppComponent,
       LoginComponent,
       RegistrationComponent,
-      WelcomePageComponent
+      WelcomePageComponent,
+      LessonComponent,
+      HomepageComponent
    ],
   imports: [
     BrowserModule,
