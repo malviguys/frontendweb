@@ -7,26 +7,30 @@ import { LoginComponent } from './login/login.component';
 import {InputTextModule} from 'primeng/inputtext';
 import {PasswordModule} from 'primeng/password';
 import {ButtonModule} from 'primeng/button';
+import {BreadcrumbModule} from 'primeng/breadcrumb';
 import { RegistrationComponent } from './registration/registration.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { LessonsbookedComponent } from './lessonsbooked/lessonsbooked.component';
 
 @NgModule({
-  declarations: [					
+  declarations: [						
     AppComponent,
       LoginComponent,
       RegistrationComponent,
       WelcomePageComponent,
       LessonComponent,
-      HomepageComponent
+      HomepageComponent,
+      LessonsbookedComponent
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     InputTextModule,
     PasswordModule,
-    ButtonModule
+    ButtonModule,
+    BreadcrumbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

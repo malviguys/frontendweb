@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'app-lesson',
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lesson.component.css']
 })
 export class LessonComponent implements OnInit {
-
-  constructor() { }
-
+  items: MenuItem[] = [];
   ngOnInit() {
+      this.items = [
+          {label:'Homepage', routerLink :"/homepage"},
+          {label:'My lessons', routerLink : "/lessonsbooked"},
+      ];
   }
 
 }
