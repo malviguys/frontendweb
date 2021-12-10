@@ -10,11 +10,23 @@ import { ActivatedRoute } from '@angular/router';
 export class LessonComponent implements OnInit {
   items: MenuItem[] = [];
   id: number;
+  name: string;
+  instrument: string;
+  teacher: string;
+  date: Date;
+  duration: number;
+  cost: number;
 
   constructor(
     private route: ActivatedRoute
   ){
     this.id=this.route.snapshot.params["id"];
+    this.name= "Lesson"+this.id;
+    this.instrument="Guitar";
+    this.teacher="Paola";
+    this.date=new Date("09/12/2021");
+    this.duration=1;
+    this.cost=10.0;
   }
 
   ngOnInit() {

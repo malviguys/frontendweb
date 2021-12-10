@@ -7,7 +7,7 @@
   <hr style="color: transparent;"/>
   <div *ngFor="let lesson of lessons">
     <div class="p-field">
-      <p>{{lesson.lessonName}}</p>
+      <p>{{lesson.name}}</p>
     </div>
     <div class="p-field" style="width: min-content">
       <button pButton pRipple type="button" label="Info" class="p-button-raised p-button-warning" [routerLink]="lesson.link"></button>
