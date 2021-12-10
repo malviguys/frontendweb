@@ -4,21 +4,20 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
+  constructor(private httpClient: HttpClient) {}
 
-  constructor(
-    private httpClient:HttpClient
-  ) { }
-
-  login(username: string, password: string): Observable<Boolean> {
-    const headers = new HttpHeaders().set('Content-Type', 'text/plain; charset=utf-8');
-    let params = new HttpParams();
-      params = params.set('username', username);
-      params = params.set('password', password);
-            
-      return this.httpClient.get<Boolean>(`${environment.API_URL}/login`, {params});
-      //this return is a problem
+  login(username: string, password: string): Observable<any> {
+    const headers = { 'Content-Type': 'application/json' };
+    const body = {
+      username,
+      password,
+    };
+    console.log(body);
+    return this.httpClient.post(`${environment.API_URL}/auth/login/`, body, {
+      headers,
+    });
   }
 }

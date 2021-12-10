@@ -15,10 +15,10 @@ import {PasswordModule} from 'primeng/password';
 import {ButtonModule} from 'primeng/button';
 import {BreadcrumbModule} from 'primeng/breadcrumb';
 import { FormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [						
+  declarations: [
     AppComponent,
       LoginComponent,
       RegistrationComponent,
@@ -34,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     PasswordModule,
     ButtonModule,
     BreadcrumbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,50 +2,41 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../auth.service';
 
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor(
-    private route: Router,
-    //private authService: AuthService
-  ) { }
+  constructor(private route: Router, private authService: AuthService) {}
 
-  username: string = "";
-  password: string = "";
+  username: string = '';
+  password: string = '';
 
   isAuthenticated: boolean = false;
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   login() {
-    if(this.username === "giada" && this.password === "giada") {
+    if (this.username === 'giada' && this.password === 'giada') {
       this.isAuthenticated = true;
-      this.route.navigate(['homepage',])
-    }
-    else {
-      alert("login failed");
+      this.route.navigate(['homepage']);
+    } else {
       this.isAuthenticated = false;
     }
-    /*this.authService.authenticate(this.username, this.password).subscribe(
-      response => {
-
-        if (response == true) {
-          sessionStorage.setItem("user", this.username);
-          this.isAuthenticated = true;
-          this.route.navigate(['main', this.username]);
-        }
-        else {
-          this.isAuthenticated = false;
-        }
+    console.log('username: ' + this.username + ' password: ' + this.password);
+    this.authService.authenticate(this.username, this.password).subscribe(
+      (response) => {
+        console.log(response);
+        sessionStorage.setItem('user', this.username);
+        this.isAuthenticated = true;
+        this.route.navigate(['homepage']);
+      },
+      (error) => {
+        console.log(error);
+        console.log('not authenticated');
+        this.isAuthenticated = false;
       }
-    )
-    */
+    );
   }
-
 }
