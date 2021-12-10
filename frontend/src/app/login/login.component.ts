@@ -18,12 +18,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   login() {
-    if (this.username === 'giada' && this.password === 'giada') {
-      this.isAuthenticated = true;
-      this.route.navigate(['homepage']);
-    } else {
-      this.isAuthenticated = false;
-    }
     console.log('username: ' + this.username + ' password: ' + this.password);
     this.authService.authenticate(this.username, this.password).subscribe(
       (response) => {
@@ -36,6 +30,7 @@ export class LoginComponent implements OnInit {
         console.log(error);
         console.log('not authenticated');
         this.isAuthenticated = false;
+        alert("login failed");
       }
     );
   }
