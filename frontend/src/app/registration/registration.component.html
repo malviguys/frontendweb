@@ -2,22 +2,26 @@
   
   <div class="p-fluid">
     <div class="p-field">
-      <input id="firstname" type="text" pInputText placeholder="First Name">
+      <input id="firstname" type="text" pInputText placeholder="First Name" aria-required="true">
     </div>
     <hr style="color: transparent;"/>
     <div class="p-field">
-      <input id="lastname" type="text" pInputText placeholder="Last Name">
+      <input id="lastname" type="text" pInputText placeholder="Last Name" aria-required="true">
     </div>
     <hr style="color: transparent;"/>
     <div class="p-field">
-        <input id="username" type="text" pInputText placeholder="Username"> 
+        <input id="username" type="text" pInputText placeholder="Username" aria-required="true"> 
     </div>
     <hr style="color: transparent;"/>
     <div class="p-field">
-        <input id="password" type="password" pPassword placeholder="Password">
+        <input id="password" type="password" pPassword placeholder="Password" aria-required="true">
+    </div>
+    <div class="p-field">
+      <p style="font-size: small; margin-bottom: 0;">Select user:</p>
+      <p-dropdown [options]="users" [(ngModel)]="selectedUser" aria-required="true"></p-dropdown>    
     </div>
     <hr style="color: transparent;"/>
-    <button pButton pRipple type="button" label="Sign up" class="p-button-raised p-button-help"></button>
+    <button pButton pRipple type="button" label="Sign up" class="p-button-raised p-button-help" (click)=signUp()></button>
 
   </div>
 

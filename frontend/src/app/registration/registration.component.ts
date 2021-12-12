@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
+import {SelectItem} from 'primeng/api';
 
 @Component({
   selector: 'app-registration',
@@ -6,10 +9,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
+  
+  users : SelectItem[] = [{ label: "Teacher", value: null },
+  { label: "Student", value: 1 }];
+  selectedUser: SelectItem | undefined;
 
-  constructor() { }
+  constructor(
+    private route: Router, 
+    private authService: AuthService
+      
+  ) { }
+
+  firstname: string = '';
+  lastname: string = '';
+  username: string = '';
+  password: string = '';
 
   ngOnInit() {
+  }
+
+  signUp() {
+    alert("here");
   }
 
 }

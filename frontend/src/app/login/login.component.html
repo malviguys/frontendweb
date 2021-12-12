@@ -6,7 +6,7 @@
     </div>
     <hr style="color: transparent;"/>
     <div class="p-field">
-        <input id="password" type="password" pPassword placeholder="Password" [(ngModel)] = "password" />
+        <input id="password" type="password" pPassword placeholder="Password" [feedback]=false [(ngModel)] = "password" />
     </div>
     <hr style="color: transparent;"/>
     <button pButton pRipple type="button" label="Login" class="p-button-raised p-button-info" (click)=login()></button>
@@ -14,4 +14,3 @@
   </div>
 
 </div>
-
