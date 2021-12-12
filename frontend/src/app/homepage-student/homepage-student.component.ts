@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
 
 @Component({
-  selector: 'app-homepage',
-  templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  selector: 'app-homepage-student',
+  templateUrl: './homepage-student.component.html',
+  styleUrls: ['./homepage-student.component.css']
 })
-export class HomepageComponent implements OnInit {
+export class HomepageStudentComponent implements OnInit {
   items: MenuItem[] = [];
   lessons: any[] = [];
   
@@ -23,7 +23,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
       this.items = [
-          {label:'Homepage', routerLink :"/homepage"},
+          {label:'Homepage', routerLink :"/homepage-student"},
           {label:'My lessons', routerLink : "/lessonsbooked"},
       ];
   }

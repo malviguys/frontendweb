@@ -7,8 +7,10 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { LessonComponent } from './lesson/lesson.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageStudentComponent } from './homepage-student/homepage-student.component';
 import { LessonsbookedComponent } from './lessonsbooked/lessonsbooked.component';
+import { AddlessonComponent } from './addlesson/addlesson.component';
+import { HomepageTeacherComponent } from './homepage-teacher/homepage-teacher.component';
 
 import {InputTextModule} from 'primeng/inputtext';
 import {PasswordModule} from 'primeng/password';
@@ -19,15 +21,18 @@ import { HttpClientModule } from '@angular/common/http';
 import {DropdownModule} from 'primeng/dropdown';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
       LoginComponent,
       RegistrationComponent,
       WelcomePageComponent,
       LessonComponent,
-      HomepageComponent,
-      LessonsbookedComponent
+      HomepageStudentComponent,
+      HomepageTeacherComponent,
+      LessonsbookedComponent,
+      AddlessonComponent
    ],
   imports: [
     BrowserModule,

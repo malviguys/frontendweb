@@ -4,8 +4,10 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { LessonComponent } from './lesson/lesson.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageStudentComponent } from './homepage-student/homepage-student.component';
+import { HomepageTeacherComponent } from './homepage-teacher/homepage-teacher.component';
 import { LessonsbookedComponent } from './lessonsbooked/lessonsbooked.component';
+import { AddlessonComponent } from './addlesson/addlesson.component';
 
 
 const routes: Routes = [
@@ -13,8 +15,10 @@ const routes: Routes = [
   {path:'registration', component : RegistrationComponent},
   {path:'login', component : LoginComponent},
   {path:'lesson/:id', component : LessonComponent},
-  {path:'homepage', component: HomepageComponent},
-  {path:'lessonsbooked', component: LessonsbookedComponent}
+  {path:'homepage-student', component: HomepageStudentComponent},
+  {path:'homepage-teacher', component: HomepageTeacherComponent},
+  {path:'lessonsbooked', component: LessonsbookedComponent},
+  {path:'addlesson', component: AddlessonComponent}
 ];
 
 @NgModule({

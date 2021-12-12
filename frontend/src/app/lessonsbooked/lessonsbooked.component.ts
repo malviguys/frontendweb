@@ -10,7 +10,7 @@ export class LessonsbookedComponent implements OnInit {
   items: MenuItem[] = [];
   ngOnInit() {
       this.items = [
-          {label:'Homepage', routerLink :"/homepage"},
+          {label:'Homepage', routerLink :"/homepage-student"},
           {label:'My lessons', routerLink : "/lessonsbooked"},
       ];
   }

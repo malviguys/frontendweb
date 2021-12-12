@@ -32,7 +32,7 @@ export class LessonComponent implements OnInit {
   ngOnInit() {
       
       this.items = [
-          {label:'Homepage', routerLink :"/homepage"},
+          {label:'Homepage', routerLink :"/homepage-student"},
           {label:'My lessons', routerLink : "/lessonsbooked"},
       ];
   }
