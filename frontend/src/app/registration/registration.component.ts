@@ -10,8 +10,8 @@ import { RegistrationService } from '../registration.service';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  
-  users : SelectItem[] = [{ label: "Teacher", value: 0 },
+
+  users : SelectItem[] = [{ label: "Teacher", value: null },
   { label: "Student", value: 1 }];
   selectedUser: SelectItem | undefined;
 
@@ -28,7 +28,9 @@ export class RegistrationComponent implements OnInit {
   password: string = '';
   userType: boolean = true;
 
-  ngOnInit() {}
+  ngOnInit() {
+    document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp2842330.jpg')";
+  }
 
   signUp() {
     //se il tipo è teacher va fatto l'add nel Teacher esempio
