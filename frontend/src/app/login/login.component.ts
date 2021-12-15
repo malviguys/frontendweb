@@ -14,8 +14,8 @@ export class LoginComponent implements OnInit {
   password: string = '';
 
   isAuthenticated: boolean = false;
-ngOnInit() {
-    document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp2842330.jpg')";
+  ngOnInit() {
+   
   }
 
 

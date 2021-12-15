@@ -29,7 +29,6 @@ export class RegistrationComponent implements OnInit {
   userType: boolean = true;
 
   ngOnInit() {
-    document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp2842330.jpg')";
   }
 
   signUp() {

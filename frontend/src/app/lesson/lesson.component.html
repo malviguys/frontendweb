@@ -1,28 +1,28 @@
 <p-breadcrumb [model]="items"></p-breadcrumb>
 <div class="center">
-  <div class="p-fluid">
+  <div class="p-fluid" *ngIf="lesson.name">
     <div class="p-field">
-      <p><b>Name:</b> {{name}}</p>
+      <p><b>Name:</b> {{lesson.name}}</p>
     </div>
     <hr style="color: transparent;"/>
     <div class="p-field">
-      <p><b>Instrument:</b> {{instrument}}</p>
+      <p><b>Instrument:</b> {{lesson.instrument.name}}</p>
     </div>
     <hr style="color: transparent;"/>
     <div class="p-field">
-      <p><b>Teacher:</b> {{teacher}}</p>
+      <p><b>Teacher:</b> {{lesson.teacher.name}}</p>
     </div>
     <hr style="color: transparent;"/>
     <div class="p-field">
-      <p><b>Date:</b> {{date}}</p>
+      <p><b>Date:</b> {{lesson.date_time}}</p>
     </div>
     <hr style="color: transparent;"/>
     <div class="p-field">
-      <p><b>Duration:</b> {{duration}}</p>
+      <p><b>Duration:</b> {{lesson.duration}}</p>
     </div>
     <hr style="color: transparent;"/>
     <div class="p-field">
-      <p><b>Cost:</b>{{cost}} €</p>
+      <p><b>Cost:</b>{{lesson.cost}} €</p>
     </div>
     <hr style="color: transparent;"/>
     <div class="p-field">

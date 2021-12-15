@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { ActivatedRoute } from '@angular/router';
+import { AvailableLessonsService } from '../available-lessons.service';
+import * as _ from 'lodash'
 
 @Component({
   selector: 'app-lesson',
@@ -9,24 +11,29 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class LessonComponent implements OnInit {
   items: MenuItem[] = [];
+  lesson : any = {
+    "name" : "",
+    "instrument" : "",
+    "teacher" : "",
+    "date" : "",
+    "duration" : "",
+    "cost" : ""
+  };
   id: number;
-  name: string;
-  instrument: string;
-  teacher: string;
-  date: Date;
-  duration: number;
-  cost: number;
+
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private lessonsService: AvailableLessonsService
   ){
+    let id=this.route.snapshot.paramMap.get("id");
+    this.lessonsService.getLessonOfIndex(id).subscribe(
+      (response) => {
+          this.lesson=response;
+    },
+      (error) => {console.log(error)},
+    )
     this.id=this.route.snapshot.params["id"];
-    this.name= "Lesson"+this.id;
-    this.instrument="Guitar";
-    this.teacher="Paola";
-    this.date=new Date("09/12/2021");
-    this.duration=1;
-    this.cost=10.0;
   }
 
   ngOnInit() {
