@@ -1,28 +1,39 @@
-<div class="center">
-  
-  <div class="p-fluid">
-    <div class="p-field">
-      <input id="firstname" type="text" pInputText placeholder="First Name" aria-required="true">
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img
+        width="40"
+        src="https://i.pinimg.com/236x/12/10/ee/1210eeb88ee664ae87354a70617611f4.jpg"
+        alt="User Icon" />
     </div>
-    <hr style="color: transparent;"/>
-    <div class="p-field">
+
+    <!-- Login Form -->
+    <form>
+<input id="firstname" type="text" pInputText placeholder="First Name" aria-required="true">
       <input id="lastname" type="text" pInputText placeholder="Last Name" aria-required="true">
-    </div>
-    <hr style="color: transparent;"/>
-    <div class="p-field">
-        <input id="username" type="text" pInputText placeholder="Username" aria-required="true"> 
-    </div>
-    <hr style="color: transparent;"/>
-    <div class="p-field">
-        <input id="password" type="password" pPassword placeholder="Password" aria-required="true">
-    </div>
-    <div class="p-field">
+      <input id="username" type="text" pInputText placeholder="Username" aria-required="true">
+      <input id="password" type="password" pPassword placeholder="Password" aria-required="true">
       <p style="font-size: small; margin-bottom: 0;">Select user:</p>
-      <p-dropdown [options]="users" [(ngModel)]="selectedUser" aria-required="true"></p-dropdown>    
+
+      <p-dropdown [options]="users" [(ngModel)]="selectedUser" aria-required="true"></p-dropdown>
+
+     <input type="submit" class="fadeIn fourth" label="Sign up" value="Sign Up" (click)=signUp()>
+
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      
     </div>
-    <hr style="color: transparent;"/>
-    <button pButton pRipple type="button" label="Sign up" class="p-button-raised p-button-help" (click)=signUp()></button>
 
   </div>
-
 </div>

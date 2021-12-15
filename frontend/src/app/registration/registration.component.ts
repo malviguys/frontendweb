@@ -9,15 +9,15 @@ import {SelectItem} from 'primeng/api';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  
+
   users : SelectItem[] = [{ label: "Teacher", value: null },
   { label: "Student", value: 1 }];
   selectedUser: SelectItem | undefined;
 
   constructor(
-    private route: Router, 
+    private route: Router,
     private authService: AuthService
-      
+
   ) { }
 
   firstname: string = '';
@@ -26,6 +26,7 @@ export class RegistrationComponent implements OnInit {
   password: string = '';
 
   ngOnInit() {
+    document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp2842330.jpg')";
   }
 
   signUp() {

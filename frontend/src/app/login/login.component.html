@@ -1,16 +1,32 @@
-<div class="center">
-  
-  <div class="p-fluid">
-    <div class="p-field">
-        <input id="username" type="text" pInputText placeholder="Username" [(ngModel)]="username"/> 
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img
+        width="40"
+        src="https://i.pinimg.com/236x/12/10/ee/1210eeb88ee664ae87354a70617611f4.jpg"
+        alt="User Icon" />
     </div>
-    <hr style="color: transparent;"/>
-    <div class="p-field">
-        <input id="password" type="password" pPassword placeholder="Password" [feedback]=false [(ngModel)] = "password" />
+
+    <!-- Login Form -->
+    <form>
+      <input id="username" type="text" class="form-control"  pInputText placeholder="Username" [(ngModel)]="username"/>
+      <input id="password" type="password" class="form-control" pPassword placeholder="Password" [feedback]=false [(ngModel)] = "password"/>
+     <input type="submit" class="fadeIn fourth" value="Log In" (click)=login()>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
     </div>
-    <hr style="color: transparent;"/>
-    <button pButton pRipple type="button" label="Login" class="p-button-raised p-button-info" (click)=login()></button>
 
   </div>
-
 </div>

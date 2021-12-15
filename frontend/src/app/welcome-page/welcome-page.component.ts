@@ -10,6 +10,7 @@ export class WelcomePageComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp2842330.jpg')";
   }
 
 }
