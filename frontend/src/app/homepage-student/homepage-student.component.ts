@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
+import { AvailableLessonsService } from '../available-lessons.service';
+import * as _ from 'lodash';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-homepage-student',
@@ -11,15 +14,20 @@ export class HomepageStudentComponent implements OnInit {
   lessons: any[] = [];
   
 
-  constructor( ){
-    for(let i=0; i<3; i++){
-      this.lessons.push({
-        link: "/lesson/"+i,
-        id: i,
-        name: "Guitar lesson"+i,
-      })
+  constructor(
+    private router: Router,
+    private lessonsService: AvailableLessonsService
+    ){
+      lessonsService.getLesson().subscribe(
+        (response) => {
+          console.log(response)
+          _.map(response,(el)=>{
+            this.lessons.push(el)
+          })
+        },
+        (error) => {console.log(error)},
+      )
     }
-  }
 
   ngOnInit() {
       this.items = [
@@ -28,4 +36,8 @@ export class HomepageStudentComponent implements OnInit {
       ];
   }
   
+  link(id: number) {
+    this.router.navigate(['/lesson', id])
+  }
+
 }

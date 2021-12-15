@@ -25,6 +25,9 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('user', this.username);
         this.isAuthenticated = true;
         this.route.navigate(['homepage-student']);
+        console.log(response);
+        localStorage.setItem('username', this.username)
+        localStorage.setItem('token', response.key)
       },
       (error) => {
         console.log(error);

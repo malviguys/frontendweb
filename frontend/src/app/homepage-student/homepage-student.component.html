@@ -10,7 +10,7 @@
       <p>{{lesson.name}}</p>
     </div>
     <div class="p-field" style="width: min-content">
-      <button pButton pRipple type="button" label="Info" class="p-button-raised p-button-warning" [routerLink]="lesson.link"></button>
+      <button pButton pRipple type="button" label="Info" class="p-button-raised p-button-warning" (click)=link(lesson.id)></button>
     </div>
     <hr style="color: transparent;"/>
   </div>
