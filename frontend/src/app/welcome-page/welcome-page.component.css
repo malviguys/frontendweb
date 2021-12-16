@@ -391,14 +391,14 @@
 }
 
   .github-star-badge {
-    color: ;
+    color: #007bb6;
     display: flex;
     align-items: center;
     font-size: 12px;
     padding: 3px 10px;
     border: 1px solid rgba(27,31,35,.2);
     border-radius: 3px;
-background:rgb(32,32,32,0.8) ;
+    background:rgb(32,32,32,0.8) ;
     margin-left: 4px;
     font-weight: 600;
   }
