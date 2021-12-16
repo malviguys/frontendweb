@@ -1,1 +1,12 @@
 <p-breadcrumb [model]="items"></p-breadcrumb>
+
+<div class="p-fluid p-grid">
+    <input id="name" type="text" class="form-control"  pInputText placeholder="Name" [(ngModel)]="lesson.name"/>
+    <input id="instrument" type="text" class="form-control"  pInputText placeholder="Instrument" [(ngModel)]="lesson.instrument"/>
+    <input id="date_time" type="datetime" class="form-control"  pInputText placeholder="Date" [(ngModel)]="lesson.date_time"/>
+    <input id="duration" type="datetime" class="form-control"  pInputText placeholder="Duration" [(ngModel)]="lesson.duration"/>
+    <input id="cost" type="text" class="form-control"  pInputText placeholder="Cost" [(ngModel)]="lesson.cost"/>
+    <div class="p-field" style="width: min-content">
+        <button pButton pRipple type="button" label="Add" class="p-button-raised p-button-success" (click)=add()></button>
+      </div>
+</div>

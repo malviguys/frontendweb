@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
 
 
   login() {
-    localStorage.clear()
     console.log('username: ' + this.username + ' password: ' + this.password);
     this.authService.authenticate(this.username, this.password).subscribe(
       (response) => {

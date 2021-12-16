@@ -11,6 +11,8 @@ export class WelcomePageComponent implements OnInit {
 
   ngOnInit() {
     document.body.style.backgroundImage = "url('https://wallpapercave.com/wp/wp2842330.jpg')";
+    document.body.style.backgroundSize = "cover"
+    document.body.style.backgroundRepeat = "no-repeat"
   }
 
 }

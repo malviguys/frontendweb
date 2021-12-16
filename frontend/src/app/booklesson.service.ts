@@ -13,6 +13,11 @@ bookLesson(booking: any) {
   return this.http.post("http://localhost:8000/api/v1/booking/", booking,{headers:{'Content-Type': 'application/json', 'Authorization': 'token '+localStorage.getItem('token')}},);
 }
 
+addLesson(lesson: any) {
+  console.log(lesson)
+  return this.http.post("http://localhost:8000/api/v1/lessons/", lesson,{headers:{'Content-Type': 'application/json', 'Authorization': 'token '+localStorage.getItem('token')}},);
+}
+
 getBookedLesson() {
   return this.http.get("http://localhost:8000/api/v1/booking/",{headers:{'Authorization': 'token '+localStorage.getItem('token')}},);
 }
