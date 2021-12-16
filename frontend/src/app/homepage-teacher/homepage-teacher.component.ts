@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
 
+import { AvailableLessonsService } from '../available-lessons.service';
 @Component({
   selector: 'app-homepage-teacher',
   templateUrl: './homepage-teacher.component.html',
@@ -9,7 +10,8 @@ import {MenuItem} from 'primeng/api';
 export class HomepageTeacherComponent implements OnInit {
   items: MenuItem[] = [];
 
-  constructor() { }
+
+   constructor() { }
 
   ngOnInit() {
     this.items = [

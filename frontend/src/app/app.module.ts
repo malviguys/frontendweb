@@ -22,13 +22,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
-  declarations: [	
+  declarations: [
     AppComponent,
       LoginComponent,
       WelcomePageComponent,
       LessonComponent,
       HomepageStudentComponent,
-      HomepageTeacherComponent,
+
       LessonsbookedComponent,
       AddlessonComponent
    ],
