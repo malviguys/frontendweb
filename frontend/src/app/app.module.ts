@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { RegistrationComponent } from './registration/registration.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { LessonComponent } from './lesson/lesson.component';
 import { HomepageStudentComponent } from './homepage-student/homepage-student.component';
@@ -26,7 +25,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [	
     AppComponent,
       LoginComponent,
-      RegistrationComponent,
       WelcomePageComponent,
       LessonComponent,
       HomepageStudentComponent,
