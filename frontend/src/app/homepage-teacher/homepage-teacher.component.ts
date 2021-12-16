@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MenuItem} from 'primeng/api';
+
 import { AvailableLessonsService } from '../available-lessons.service';
 import {TeacherService} from 'src/app/Teacher.service';
 @Component({
@@ -8,15 +9,19 @@ import {TeacherService} from 'src/app/Teacher.service';
   styleUrls: ['./homepage-teacher.component.css']
 })
 export class HomepageTeacherComponent implements OnInit {
+  items: MenuItem[] = [];
 
-   constructor(private service:TeacherService) { }
-LessonList:any=[];
-  ngOnInit(): void {
-  this.refreshLessonList();
-  }
-refreshLessonList(){
-  this.service.getLessonList().subscribe(data=>{
-  this.LessonList=data;
-  });
+
+   constructor() { }
+
+  constructor() { }
+
+  ngOnInit() {
+    this.items = [
+      {label:'Homepage', routerLink :"/homepage-teacher"},
+      {label:'Add lesson', routerLink : "/addlesson"},
+  ];
+
+
 }
 }

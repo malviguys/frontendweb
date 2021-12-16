@@ -4,12 +4,12 @@
     <h3>My lessons:</h3>
   </div>
   <hr style="color: transparent;"/>
-  <!--<div *ngFor="">-->
-  <div class="p-field">
-    <p></p>
-  </div>
+  <div *ngFor="let book of booking">
+    <div class="p-field">
+      <p>{{book.lesson.name}}</p>
+    </div>
   <div class="p-field" style="width: min-content">
-    <button pButton pRipple type="button" label="Delete" class="p-button-raised p-button-danger"></button>
+    <button pButton pRipple type="button" label="Delete" class="p-button-raised p-button-danger" (click)=remove(book.id)></button>
   </div>
   <!--</div>-->
 </div>

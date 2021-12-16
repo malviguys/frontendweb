@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import * as _ from 'lodash';
 import {MenuItem} from 'primeng/api';
+import { BookLessonService } from '../booklesson.service';
 
 @Component({
   selector: 'app-lessonsbooked',
@@ -8,10 +10,35 @@ import {MenuItem} from 'primeng/api';
 })
 export class LessonsbookedComponent implements OnInit {
   items: MenuItem[] = [];
+  booking: any [] = [];
+
+  constructor(private bookLessonService: BookLessonService){
+    bookLessonService.getBookedLesson().subscribe(
+      (response) => {
+        console.log(response)
+        _.map(response, (el) => {
+          this.booking.push(el)
+        })
+      },
+      (error) => {console.log(error)},
+    )
+  }
+
   ngOnInit() {
       this.items = [
           {label:'Homepage', routerLink :"/homepage-student"},
           {label:'My lessons', routerLink : "/lessonsbooked"},
       ];
+  }
+
+  remove(id: number) {
+    this.bookLessonService.deleteLesson(id).subscribe(
+      (response) => {
+          console.log(response)
+          alert("removed")
+      },
+      (error) => {console.log(error)},
+    )
+
   }
 }
