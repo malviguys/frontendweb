@@ -28,7 +28,7 @@ export class LoginService {
 
   getUserProfile(id: any) {
     const headers = { 'Content-Type': 'application/json', 'Authorization': 'token '+localStorage.getItem('token')};
-    this.httpClient.get(`${environment.API_URL}/student/${id}`, {headers: headers}).subscribe(
+    return this.httpClient.get(`${environment.API_URL}/student/${id}`, {headers: headers}).subscribe(
       (response) => {
         localStorage.setItem('studentProfile', response.toString())
         localStorage.setItem('isStudent', "true")

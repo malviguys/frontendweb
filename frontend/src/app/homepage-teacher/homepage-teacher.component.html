@@ -1,1 +1,17 @@
 <p-breadcrumb [model]="items"></p-breadcrumb>
+
+<div class="p-fluid">
+    <div class="p-field">
+      <h3>Lessons:</h3>
+    </div>
+    <hr style="color: transparent;"/>
+    <div *ngFor="let lesson of lessons">
+      <div class="p-field">
+        <p>{{lesson.name}}</p>
+      </div>
+        <div class="p-field" style="width: min-content">
+            <button pButton pRipple type="button" label="Delete" class="p-button-raised p-button-danger" (click)=delete(lesson.id)></button>
+        </div>
+      <hr style="color: transparent;"/>
+    </div>
+  </div>

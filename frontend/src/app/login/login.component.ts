@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
 
   login() {
+    localStorage.clear()
     console.log('username: ' + this.username + ' password: ' + this.password);
     this.authService.authenticate(this.username, this.password).subscribe(
       (response) => {
@@ -37,10 +38,14 @@ export class LoginComponent implements OnInit {
             if(this.data.pk){
               this.authService.userProfile(this.data.pk)
             }
+            if(localStorage.getItem('isStudent')==="true")
+              this.route.navigate(['homepage-student']);
+            else 
+              this.route.navigate(['homepage-teacher']);
           }
+          
         )
-        //if()
-        this.route.navigate(['homepage-student']);
+        
       },
       (error) => {
         console.log(error);

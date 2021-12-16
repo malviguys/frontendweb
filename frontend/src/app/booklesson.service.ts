@@ -21,4 +21,8 @@ deleteLesson(id: number) {
   return this.http.delete("http://localhost:8000/api/v1/booking/"+id,{headers:{'Authorization': 'token '+localStorage.getItem('token')}},);
 }
 
+deleteLessonTeacher(id: number) {
+  return this.http.delete("http://localhost:8000/api/v1/lessons/"+id,{headers:{'Authorization': 'token '+localStorage.getItem('token')}},);
+}
+
 }
