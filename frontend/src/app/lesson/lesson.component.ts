@@ -58,13 +58,16 @@ export class LessonComponent implements OnInit {
   }
 
   add() {
+    this.booking.lesson.id=this.route.snapshot.paramMap.get("id");
     this.bookLessonService.bookLesson(this.booking).subscribe(
       (response) => {
           this.booking=response;
+          console.log(response)
+          alert("added")
       },
       (error) => {console.log(error)},
     )
-    alert("added")
+    
   }
 
 }

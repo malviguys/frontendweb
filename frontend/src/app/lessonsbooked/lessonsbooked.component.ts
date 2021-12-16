@@ -30,4 +30,15 @@ export class LessonsbookedComponent implements OnInit {
           {label:'My lessons', routerLink : "/lessonsbooked"},
       ];
   }
+
+  remove(id: number) {
+    this.bookLessonService.deleteLesson(id).subscribe(
+      (response) => {
+          console.log(response)
+          alert("removed")
+      },
+      (error) => {console.log(error)},
+    )
+
+  }
 }
