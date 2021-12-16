@@ -22,4 +22,9 @@ export class AuthService {
   isLogged = () => (sessionStorage.getItem('user') != null ? true : false);
 
   clearAll = () => sessionStorage.removeItem('user');
+
+  userId = () => this.loginService.getUserId();
+
+  userProfile = (userId: any) => this.loginService.getUserProfile(userId)
+  
 }

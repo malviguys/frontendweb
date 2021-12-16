@@ -15,7 +15,7 @@ export class HomepageTeacherComponent implements OnInit {
     this.items = [
       {label:'Homepage', routerLink :"/homepage-teacher"},
       {label:'Add lesson', routerLink : "/addlesson"},
-  ];
+    ];
   }
 
 }

@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
 
   username: string = '';
   password: string = '';
+  private data: any = [];
 
   isAuthenticated: boolean = false;
   ngOnInit() {
@@ -26,10 +27,20 @@ export class LoginComponent implements OnInit {
         console.log(response);
         sessionStorage.setItem('user', this.username);
         this.isAuthenticated = true;
-        this.route.navigate(['homepage-student']);
         console.log(response);
         localStorage.setItem('username', this.username)
         localStorage.setItem('token', response.key)
+        this.authService.userId().subscribe( 
+          (response) => {
+            this.data=response
+            localStorage.setItem('userId', this.data.pk)
+            if(this.data.pk){
+              this.authService.userProfile(this.data.pk)
+            }
+          }
+        )
+        //if()
+        this.route.navigate(['homepage-student']);
       },
       (error) => {
         console.log(error);

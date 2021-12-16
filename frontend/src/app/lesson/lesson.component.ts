@@ -58,6 +58,9 @@ export class LessonComponent implements OnInit {
   }
 
   add() {
+    let studProf=localStorage.getItem("studentProfile")
+    if(studProf != null)
+      this.booking.student=JSON.parse(studProf);
     this.booking.lesson.id=this.route.snapshot.paramMap.get("id");
     this.bookLessonService.bookLesson(this.booking).subscribe(
       (response) => {
