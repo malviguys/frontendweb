@@ -16,7 +16,7 @@ export class LessonComponent implements OnInit {
     "name" : "",
     "instrument" : "",
     "teacher" : "",
-    "date" : "",
+    "date_time" : "",
     "duration" : "",
     "cost" : ""
   };
@@ -43,6 +43,7 @@ export class LessonComponent implements OnInit {
     this.lessonsService.getLessonOfIndex(id).subscribe(
       (response) => {
           this.lesson=response;
+          this.lesson.date_time=new Date(this.lesson.date_time).toLocaleString()
     },
       (error) => {console.log(error)},
     )
